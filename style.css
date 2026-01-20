@@ -2,3 +2,7 @@ body {
     background-color: #57abf0; /* A soft, modern blue-grey */
     font-family: sans-serif;   /* Gets rid of Times New Roman */
 }
+h1 {
+    color: #ffffff;            /* White color for headings */
+    text-align: center;        /* Centered headings */
+}
