@@ -6,3 +6,28 @@ h1 {
     color: #ffffff;            /* White color for headings */
     text-align: center;        /* Centered headings */
 }
+
+section {
+    padding: 20px;           /* Breathing room inside */
+    margin-bottom: 20px;     /* Space between cards */
+    background-color: white; /* Distinct card color */
+    border-radius: 10px;     /* Rounded corners (Modern look) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* A subtle drop shadow */
+    max-width: 600px;        /* Stop the cards from getting too wide */
+    margin-left: auto;       /* Centering Trick Part 1 */
+    margin-right: auto;      /* Centering Trick Part 2 */
+}
+
+nav ul {
+    display : flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
