@@ -31,3 +31,19 @@ nav a {
     color: #333;
     font-weight: bold;
 }
+
+/* RESPONSIVE: Mobile Layout */
+@media (max-width: 600px) {
+
+    /* Rule 1: Stack the navigation links vertically */
+    nav ul {
+        flex-direction: column; /* This flips the flexbox from Row to Column */
+        align-items: center; /* Keeps them centered */
+        gap: 15px; /* Adds vertical breathing room */
+    }
+
+    /* Rule 2: Make the text slightly smaller so it doesn't wrap weirdly */
+    h1 {
+        font-size: 1.5rem; 
+    }
+}   
