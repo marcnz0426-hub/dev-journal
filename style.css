@@ -47,3 +47,27 @@ nav a {
         font-size: 1.5rem; 
     }
 }   
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a; /* Almost black */
+    color: #f0f0f0;            /* Almost white text */
+}
+
+/* We need to darken the white cards too */
+body.dark-mode section {
+    background-color: #2c2c2c; /* Dark Grey */
+    color: #ffffff; /* Pure white text */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* White shadow instead of black */
+}
+
+/* style the button to look cool */
+#theme-toggle {
+    background: none;
+    border: 2px solid currentColor;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    color: inherit; /* Takes the color of the parent */
+}
