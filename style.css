@@ -71,3 +71,7 @@ body.dark-mode section {
     border-radius: 5px;
     color: inherit; /* Takes the color of the parent */
 }
+
+body.dark-mode nav ul a {
+    color: #f0f0f0; /* Light text for links in dark mode */
+}
