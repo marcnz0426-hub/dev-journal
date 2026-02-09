@@ -1,5 +1,15 @@
+:root {
+    /* Define our Color Palette here */
+    --bg-color: #57abf0; /* A soft, modern blue-grey */
+    --card-bg: white; /* Distinct card color */
+    --text-color: #333;      /* Dark Text */
+    --accent-color: #3498db; /* The Blue color */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* A subtle drop shadow */
+}
+
 body {
-    background-color: #57abf0; /* A soft, modern blue-grey */
+    background-color: var(--bg-color); /* A soft, modern blue-grey */
+    color: var(--text-color);          /* A soft, modern blue-grey */
     font-family: sans-serif;   /* Gets rid of Times New Roman */
 }
 h1 {
@@ -10,9 +20,9 @@ h1 {
 section {
     padding: 20px;           /* Breathing room inside */
     margin-bottom: 20px;     /* Space between cards */
-    background-color: white; /* Distinct card color */
+    background-color: var(--card-bg); /* Distinct card color */
     border-radius: 10px;     /* Rounded corners (Modern look) */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* A subtle drop shadow */
+    box-shadow: 0 4px 6px var(--shadow-color); /* A subtle drop shadow */
     max-width: 600px;        /* Stop the cards from getting too wide */
     margin-left: auto;       /* Centering Trick Part 1 */
     margin-right: auto;      /* Centering Trick Part 2 */
@@ -50,15 +60,10 @@ nav a {
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #1a1a1a; /* Almost black */
-    color: #f0f0f0;            /* Almost white text */
-}
-
-/* We need to darken the white cards too */
-body.dark-mode section {
-    background-color: #2c2c2c; /* Dark Grey */
-    color: #ffffff; /* Pure white text */
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* White shadow instead of black */
+    --bg-color: #1a1a1a; /* Almost black */
+    --card-bg: #2c2c2c; /* Dark Grey */
+    --text-color: #f0f0f0; /* Almost white text */
+    --shadow-color: rgba(255, 255, 255, 0.1); /* White shadow instead of black */
 }
 
 /* style the button to look cool */
