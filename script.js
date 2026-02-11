@@ -49,3 +49,44 @@ form.addEventListener('submit', (event) => {
     alert(`Thank you, ${name}! Your message has been received (in theory).`);
     form.reset(); // Wipes the inputs clean
 })
+
+// --- WEEK 3: API FETCHING ---
+
+// 1. Select elements
+const quoteText = document.getElementById('quote-text');
+const quoteAuthor = document.getElementById('quote-author');
+const quoteBtn = document.getElementById('new-quote-btn');
+
+// 2. Define the function to get data
+async function getQuote() {
+    // Show loading state (User Experience 101)
+    quoteText.textContent = "Fetching wisdom...";
+    quoteAuthor.textContent = "";
+
+    try {
+        // A. Send the "Waiter" (fetch) to the API URL
+        const response = await fetch('https://dummyjson.com/quotes/random');
+
+        // B. Wait for the "Waiter" to return with JSON (Data)
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+
+        // C. Update the HTML with the fresh data
+        quoteText.textContent = `"${data.quote}"`;
+        quoteAuthor.textContent = `- ${data.author}`;
+
+    } catch (error) {
+        // D. Handle errors (if the internet is down)
+        quoteText.textContent = "Oops! Failed to fetch a quote.";
+        console.error('API Error:', error);
+    }
+}
+
+// 3. Attach the function to the button
+quoteBtn.addEventListener('click', getQuote);
+
+// Automatically load a quote when the page opens
+getQuote();
