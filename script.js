@@ -90,3 +90,46 @@ quoteBtn.addEventListener('click', getQuote);
 
 // Automatically load a quote when the page opens
 getQuote();
+
+// --- WEEK 3: GITHUB PORTFOLIO ---
+
+const projectContainer = document.getElementById('project-container');
+const githubUsername = 'marcnz0426-hub';
+
+async function getProjects() {
+    try {
+        const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated`);
+
+        if (!response.ok) {
+            throw new Error('GitHub user not found');
+        }
+        
+        const repos = await response.json();
+
+        // Clear loading text
+        projectContainer.innerHTML = '';
+
+        // Take the first 6 repos
+        repos.slice(0, 6).forEach(repo => {
+            const card = document.createElement('dic');
+            card.classname = 'project-card';
+
+            card.innerHTML = `
+                <h3>${repo.name}</h3>
+                <p>${repo.description || "No description provided."}</p>
+                <div class="card-links">
+                    <a href="${repo.html_url}" target="_blank">View Code</a>
+                    ${repo.homepage ? `<a href="${repo.homepage}" target="_blank">Live Demo</a>` : ''}
+                    </div>
+            `;
+
+            projectContainer.appendChild(card);
+        });
+
+    } catch (error) {
+        projectContainer.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+    }
+
+}
+
+getProjects();

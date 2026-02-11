@@ -141,3 +141,43 @@ blockquote {
     margin-bottom: 20px;
     color: var(--accent-color);
 }
+
+/* Projects Section Grid */
+.project-grid {
+    display: grid;
+    /* This magic rule makes it responsive automatically: */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Individual Project Card */
+.project-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    border-left: 4px solid var(--accent-color);
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift up slightly on hover */
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+.card-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.card-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
