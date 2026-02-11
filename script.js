@@ -28,3 +28,24 @@ themeButton.addEventListener('click', () => {
         localStorage.setItem('theme', 'light');
     }
 });
+
+// 1. Select the form element
+const form = document.getElementById('contact-form');
+
+// 2. Listen for the 'submit' event (Not 'click' on the button!)
+form.addEventListener('submit', (event) => {
+
+    // CRITICAL: Stop the page from refreshing
+    event.preventDefault();
+
+    // 3. Grab the data from the inputs
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    // 4. For now, just log it to the console (Simulating sending)
+    console.log(`Form Submitted! Name: ${name}, Email: ${email}`);
+
+    // 5. User Feedback: Show an alert or clear the form 
+    alert(`Thank you, ${name}! Your message has been received (in theory).`);
+    form.reset(); // Wipes the inputs clean
+})

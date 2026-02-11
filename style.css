@@ -80,3 +80,45 @@ body.dark-mode {
 body.dark-mode nav ul a {
     color: #f0f0f0; /* Light text for links in dark mode */
 }
+
+/* Contact Form Styles */
+form {
+    display: flex;
+    flex-direction: column; /* Stack everything vertically */
+    gap: 15px; /* Space between the chunks */
+}
+
+/* Make labels sit above the inputs */
+labe {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block; /* This forces the label to take its own line */
+}
+
+/* Make inputs nice and wide */
+input, textarea {
+    width: 100%; /* Fill the card width */
+    padding: 10px; /* Make the typing area comfortable */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit; /* Stop it from changing fonts */
+    box-sizing: border-box; /* Crucial: Keeps padding inside the width */
+}
+
+/* Style the Send button to look like a call-to-action */
+button[type="submit"] {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s; /* Smooth color change */
+}
+
+button[type="submit"]:hover {
+    opacity: 0.9; /* Slight fade when hovering */
+}
